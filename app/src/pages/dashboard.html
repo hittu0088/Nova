@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="header"><h2>Dashboard</h2></div>
+<div id="list"></div>
+<script>
+const courses = JSON.parse(localStorage.getItem('courses')||'[]');
+const list = document.getElementById('list');
+courses.forEach(c=>{
+ const d=document.createElement('div');
+ d.className='card';
+ d.innerHTML=`<h3>${c.title}</h3>`;
+ list.appendChild(d);
+});
+</script>
+</body>
+</html>
